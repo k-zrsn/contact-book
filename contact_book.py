@@ -12,7 +12,7 @@ def addContact():
     Docstring:
     A function that asks the user for the name and phone number of the contact they want to add and updates the contactBook dictionary accordingly.
     """
-    contactName = input('\nEnter first and last name of contact: ').title() 
+    contactName = input('\nEnter first AND last name of contact: ').title() 
     phoneNumber = input('\nEnter phone number: ')
     contactBook.update([(contactName, phoneNumber)])
     print ("\n\nContact has been added\n\n\n")
@@ -22,7 +22,7 @@ def searchContact():
     Docstring:
     A function that asks the user for the name of the contact they want to search for, then displays the information of the contact.
     """
-    search = input("\nEnter name of contact: ").title()
+    search = input("\nEnter the name of the contact you would like to search for: ").title()
     if search in contactBook:
         print(f"Contact found: {search}, Phone Number: {contactBook[search]}\n\n\n")
         #time.sleep(2)
@@ -44,7 +44,7 @@ def deleteContact():
     Docstring:
     A function that asks the user for the name of the contact they want to delete, then removes the contact from the contactBook dictionary.
     """
-    delete = input("\nEnter full name of contact to delete: ").title()
+    delete = input("\nEnter the FULL name of contact to delete: ").title()
     if delete in contactBook:
         del contactBook[delete]
         print ("\n\nContact has been deleted\n\n\n")
@@ -82,6 +82,3 @@ while True:
 
     elif 'DELETE' in action:
         deleteContact()
-
-    else:
-        quit()
