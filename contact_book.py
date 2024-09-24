@@ -24,7 +24,7 @@ def searchContact():
     """
     search = input("\nEnter the name of the contact you would like to search for: ").title()
     if search in contactBook:
-        print(f"Contact found: {search}, Phone Number: {contactBook[search]}\n\n\n")
+        print(f"\n\nContact found: {search}, Phone Number: {contactBook[search]}\n\n\n")
         #time.sleep(2)
 
     else:
@@ -71,7 +71,7 @@ while True:
         print (f"{name}: {phone}")
 
     ### Ask the user what they want to do
-    action = input("\n\n(To exit type exit)\nWould you like to add, search, or delete a contact? ").upper()
+    action = input("\n\nWould you like to add, search, or delete a contact? ").upper()
 
     
     if 'ADD' in action:
