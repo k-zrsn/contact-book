@@ -16,23 +16,43 @@ def searchContact():
     search = input("\nEnter name of contact: ").title()
     if search in contactBook:
         print(f"Contact found: {search}, Phone Number: {contactBook[search]}\n\n\n")
+        time.sleep(2)
 
     else:
         contactFound = False
         for name, phone in contactBook.items():
             if search in name:
                 print(f"\nContact found: {name}, Phone Number: {phone}\n\n\n")
+                time.sleep(2)
                 contactFound = True
                 break
         if not contactFound:
                 print ("\n\nContact not found\n")
+                time.sleep(2)
 
+def deleteContact():
+    delete = input("\nEnter full name of contact to delete: ").title()
+    if delete in contactBook:
+        del contactBook[delete]
+        print ("\n\nContact has been deleted\n\n\n")
+        time.sleep(2)
+    else:
+        contactFound = False
+        for name, phone in contactBook.items():
+            if delete in name:
+                del contactBook[delete]
+                print ("\n\nContact has been deleted\n\n\n")
+                time.sleep(2)
+                contactFound = True
+                break
+            if not contactFound:
+                print ("\n\nContact not found\n")
+                time.sleep(2)
 
 
 print ("\n\nContact Book\n")
 
 while True:
-
     for name, phone in contactBook.items():
         print (f"{name}: {phone}")
 
@@ -41,13 +61,12 @@ while True:
     
     if 'ADD' in action:
         addContact()
+
     elif 'SEARCH' in action:
         searchContact()
 
-    '''
     elif 'DELETE' in action:
+        deleteContact()
 
     else:
         quit()
-    '''
-
