@@ -24,7 +24,7 @@ def searchContact():
     """
     search = input("\nEnter the name of the contact you would like to search for: ").title()
     if search in contactBook:
-        print(f"\n\nContact found: {search}, Phone Number: {contactBook[search]}\n\n\n")
+        print(f"\n\n\nContact found: {search}, Phone Number: {contactBook[search]}\n\n\n")
         #time.sleep(2)
 
     else:
